@@ -1,0 +1,28 @@
+; DAGGER - Dark's Adaptive Goam & GoamEER Ear Retractor, {VER} r{REV}
+; Hides the ear meshes while a hood or helmet covers the head.
+
+; The game names ear geometry after the head part's editor ID, so ears are matched by name prefix
+; (comma separated, not case sensitive).
+;   Goam's Elven Ears Redone:  GoamSm, GoamLrg, GoamXL
+;   Goam's Elven Ears:         GoamElvenEars
+; If the ears do not hide, cover your head once and look in DAGGER.log: it lists the geometry names
+; it found on the player, so you can add the right prefix.
+prefixes = {NODES}
+
+; Optional exact geometry names, in addition to the prefixes (comma separated).
+nodes =
+
+; Armor slots that count as "covered", as a bit mask: 1 = Head (slot 30), 2 = Hair (slot 31).
+; Vanilla hoods and cowls use slot 31 (Hair), helmets use 30 and 31, so the default is 3 (both).
+; Circlets use their own slot (42) and are not counted either way.
+slotMask = 3
+
+; Also ignore armor with the ClothingCirclet keyword if a mod puts a circlet in slot 30/31.
+ignoreCirclets = true
+
+; Re-check interval in milliseconds while idle (catches model reloads) and right after an equip/load.
+pollMs = 250
+fastPollMs = 40
+
+; trace, debug, info, warn, error
+logLevel = info

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>DAGGER - Dark's Adaptive Goam &amp; GoamEER Ear Retractor {VER} r{REV}</moduleName>
+
+  <requiredInstallFiles>
+    <file source="SKSE\Plugins\DAGGER.dll" destination="SKSE\Plugins\DAGGER.dll" />
+  </requiredInstallFiles>
+
+  <installSteps order="Explicit">
+    <installStep name="Elven ears">
+      <optionalFileGroups order="Explicit">
+        <group name="Which elven ears mod do you use?" type="SelectExactlyOne">
+          <plugins order="Explicit">
+
+            <plugin name="Goam's Elven Ears Redone">
+              <description>Use this if you have GoamElvenEarsRedone.esp. Hides the GoamSm*, GoamLrg* and GoamXL* ear head parts.</description>
+              <conditionFlags>
+                <flag name="ears">redone</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="GoamElvenEarsRedone.esp" state="Active" />
+                        <dependencies operator="Or">
+                          <fileDependency file="GoamElvenEars.esp" state="Inactive" />
+                          <fileDependency file="GoamElvenEars.esp" state="Missing" />
+                        </dependencies>
+                      </dependencies>
+                      <type name="Recommended" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+            <plugin name="Goam's Elven Ears (original)">
+              <description>Use this if you have GoamElvenEars.esp (the original, not Redone). Hides the GoamElvenEars* ear head parts.</description>
+              <conditionFlags>
+                <flag name="ears">original</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="GoamElvenEars.esp" state="Active" />
+                        <dependencies operator="Or">
+                          <fileDependency file="GoamElvenEarsRedone.esp" state="Inactive" />
+                          <fileDependency file="GoamElvenEarsRedone.esp" state="Missing" />
+                        </dependencies>
+                      </dependencies>
+                      <type name="Recommended" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+            <plugin name="Both">
+              <description>Hides the ears of both mods. Safe if you switch between them or run both.</description>
+              <conditionFlags>
+                <flag name="ears">both</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="GoamElvenEarsRedone.esp" state="Active" />
+                        <fileDependency file="GoamElvenEars.esp" state="Active" />
+                      </dependencies>
+                      <type name="Recommended" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+
+  <conditionalFileInstalls>
+    <patterns>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="ears" value="redone" />
+        </dependencies>
+        <files>
+          <file source="options\Redone\DAGGER.ini" destination="SKSE\Plugins\DAGGER.ini" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="ears" value="original" />
+        </dependencies>
+        <files>
+          <file source="options\Original\DAGGER.ini" destination="SKSE\Plugins\DAGGER.ini" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="ears" value="both" />
+        </dependencies>
+        <files>
+          <file source="options\Both\DAGGER.ini" destination="SKSE\Plugins\DAGGER.ini" />
+        </files>
+      </pattern>
+    </patterns>
+  </conditionalFileInstalls>
+</config>

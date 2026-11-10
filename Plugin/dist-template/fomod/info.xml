@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fomod>
+  <Name>DAGGER - Dark's Adaptive Goam &amp; GoamEER Ear Retractor</Name>
+  <Author>DarkAttentater</Author>
+  <Version>{VER} r{REV}</Version>
+  <Description>DAGGER is an SKSE plugin that hides Goam's Elven Ears (Redone and/or the original) while a hood or helmet covers the head, and shows them again when it comes off. No plugin file, no scripts.</Description>
+</fomod>

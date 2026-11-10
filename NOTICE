@@ -1,0 +1,19 @@
+DAGGER - Dark's Adaptive Goam & GoamEER Ear Retractor
+Copyright (C) 2026 DarkAttentater
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+
+DAGGER links CommonLibSSE-NG, which is GPL-3.0-or-later with a modding exception (see
+Plugin/extern/CommonLibSSE-NG/EXCEPTIONS.md). The full licence text is in the file LICENSE.
+
+DAGGER contains no files from Goam's Elven Ears or Goam's Elven Ears Redone. It only hides their
+ear meshes at run time.
+
+Third-party libraries used to build the plugin (via vcpkg and CommonLibSSE-NG): spdlog, fmt, and
+the other packages listed in Plugin/vcpkg.json, under their own licences.

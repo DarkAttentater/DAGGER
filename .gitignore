@@ -1,0 +1,7 @@
+build/
+vcpkg_installed/
+dist/
+*.user
+.vs/
+# release zips are published as GitHub release assets, not committed
+/*.zip

@@ -1,0 +1,102 @@
+NEXUS MOD PAGE TEXT (BBCode). Draft: review before posting. Nothing has been uploaded.
+
+=== NAME ===
+DAGGER - Dark's Adaptive Goam & GoamEER Ear Retractor
+
+=== SHORT DESCRIPTION (tagline) ===
+Hides Goam's Elven Ears and Goam's Elven Ears Redone under hoods, cowls and helmets, and shows them again when you take the headwear off. SKSE plugin, no ESP, no scripts.
+
+=== DESCRIPTION ===
+[size=5][b]DAGGER[/b][/size]
+[i]Dark's Adaptive Goam & GoamEER Ear Retractor[/i]
+
+Long elven ears poking through a hood are a classic clipping problem. DAGGER fixes it for [b]Goam's Elven Ears[/b] and [b]Goam's Elven Ears Redone[/b]: put on a hood, cowl or helmet and the ears disappear; take it off and they are back.
+
+[size=4][b]How it works[/b][/size]
+[list]
+[*]It hides the ear meshes on your character's loaded model. It does not swap head parts and does not rebuild the head, so the change is immediate.
+[*]No ESP and no Papyrus scripts. Nothing is written to your save game, and load order does not matter.
+[*]Works with Goam's Elven Ears, Goam's Elven Ears Redone, or both installed together.
+[/list]
+
+[size=4][b]What counts as covered[/b][/size]
+[list]
+[*]Anything in the Head (slot 30) or Hair (slot 31) armor slot: vanilla hoods, cowls, hats and helmets.
+[*]Circlets do [b]not[/b] hide the ears.
+[*]Player character only.
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*]Skyrim SE / AE
+[*][url=https://skse.silverlock.org/]SKSE64[/url]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/32444]Address Library for SKSE Plugins[/url]
+[*]Goam's Elven Ears and/or Goam's Elven Ears Redone (not included)
+[/list]
+Tested on game version 1.7.104. Other SE/AE versions should work through Address Library but are untested.
+
+[size=4][b]Installation[/b][/size]
+Install with Vortex or Mod Organizer 2. The FOMOD asks which ears mod you use (Redone, Original or Both) and pre-selects the one that matches your active plugins.
+
+[size=4][b]Configuration[/b][/size]
+Optional: [font=Courier New]SKSE/Plugins/DAGGER.ini[/font]
+[list]
+[*][b]prefixes[/b] - ear geometry name prefixes to hide.
+[*][b]slotMask[/b] - 3 = Head and Hair (default), 1 = Head only.
+[*][b]ignoreCirclets[/b] - skip armor with the ClothingCirclet keyword (default on).
+[/list]
+
+[size=4][b]Troubleshooting[/b][/size]
+The log is [font=Courier New]Documents\My Games\Skyrim Special Edition\SKSE\DAGGER.log[/font]. It lists every item you equip with its slot mask and which ear meshes were found. If a hood from another mod does not hide the ears, check its slot in the log.
+
+[size=4][b]Known limitations[/b][/size]
+[list]
+[*]Player only (no followers or NPCs).
+[*]A mod that rebuilds your head model while covered can briefly show the ears; DAGGER re-applies the hide within a quarter of a second.
+[/list]
+
+[size=4][b]Uninstalling[/b][/size]
+Remove the mod. Nothing is stored in your save.
+
+[size=4][b]AI disclosure[/b][/size]
+DAGGER was developed with Claude Code, an AI coding assistant using Anthropic's Claude models. The AI wrote the C++ plugin code, the installer (FOMOD) files, the README and this page text. The requirements, design decisions, naming and in-game testing of every build were done by the mod author, and the plugin was debugged from real in-game logs. The mod contains no AI-generated images, textures, meshes, audio or voice. [CONFIRM: the screenshots on this page are real in-game captures, not AI-generated or AI-enhanced.]
+Full source and commit history: [url=https://github.com/DarkAttentater/DAGGER]github.com/DarkAttentater/DAGGER[/url]
+
+[size=4][b]Credits[/b][/size]
+[list]
+[*][url=ADD_LINK_TO_GOAMS_ELVEN_EARS_REDONE_PAGE]Goam's Elven Ears Redone[/url] and [url=ADD_LINK_TO_GOAMS_ELVEN_EARS_PAGE]Goam's Elven Ears[/url], by Goam. DAGGER only hides their ear meshes at run time and includes none of their files.
+[*][url=https://github.com/alandtse/CommonLibSSE-NG]CommonLibSSE-NG[/url] (alandtse fork), which the plugin is built on.
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/32444]Address Library for SKSE Plugins[/url] and [url=https://skse.silverlock.org/]SKSE64[/url].
+[/list]
+
+[size=4][b]Source and licence[/b][/size]
+Open source under GPL-3.0-or-later: [url=https://github.com/DarkAttentater/DAGGER]github.com/DarkAttentater/DAGGER[/url]
+
+=== POSTING SELECTIONS (based on Nexus's AI policy changes of 3 Nov 2026) ===
+Sources: https://www.nexusmods.com/news/15654 and https://help.nexusmods.com/article/180-ai-policy-changes-2026
+
+AI disclosure (mandatory on new uploads):
+- Select "AI-Generated Content". Nexus defines it as AI producing the majority of the code. For DAGGER, AI wrote all of the code.
+- Select "AI Media". Nexus defines it as AI mod page descriptions or media outside the mod content. This page text and the README were written by AI.
+- Do NOT select "AI Assisted". It is for human-led mods where AI had a limited supporting role, and it requires you to list the tools and outputs, show human-led development history, and be able to explain your code in a dispute.
+- Keep the "AI disclosure" section above on the page. Update it whenever a later version adds new AI-written parts.
+
+Permissions (fill in every field shown on the upload form):
+- Licence/open source: GPL-3.0-or-later, link to the GitHub repo.
+- Forks / parallel versions: allow. Under the GPL anyone may fork and must keep the same licence, and Nexus says it will honour copyleft over its own defaults. Choosing "Ask me" would contradict the licence.
+- AI training / tool usage: your choice. The default is "Ask me", but Nexus says its settings do not override a copyleft licence already on the code, so this mostly affects how you present the mod. Pick what you intend and keep the wording consistent with the GPL.
+- Asset reuse, conversion and upload permissions: your choice (existing fields, unchanged by the policy).
+
+Page content:
+- Requirements: Goam's Elven Ears Redone and/or Goam's Elven Ears (with working links), SKSE64, Address Library.
+- Credits: keep the links above. Nexus wants every original creator credited in the main description with a working link, including external sources.
+- Images: real in-game screenshots only (hood off, hood on). Do not use AI-generated art or AI-enhanced or upscaled screenshots; an AI-made thumbnail passed off as in-game is against the rules, and AI-enhanced images would also need the "AI Media" tag.
+- Adult content: none.
+
+Category: Visuals and Graphics or Races, Classes and Birthsigns (pick what fits your other uploads)
+Tags: SKSE plugin, Elves, Hoods, Fixes, Clipping
+
+Other things to know:
+- Nexus may ask for source code if it has security concerns about a DLL. Yours is public on GitHub, so link it on the page.
+- Nexus says it will not use mods to train AI or license them to anyone who does.
+- The new permission fields and the extra rules take full effect on 2 Jan 2027, but new uploads must fill in everything now.
